@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <children>
+      <Pane fx:id="mainPane" layoutY="30.0" prefHeight="370.0" prefWidth="600.0" visible="false">
+         <children>
+            <ListView fx:id="passwordFileList" layoutX="115.0" layoutY="73.0" onMouseClicked="#fileListClicked" prefHeight="230.0" prefWidth="370.0" />
+            <Label layoutX="115.0" layoutY="49.0" text="Password Files" />
+            <Button fx:id="newFileButton" layoutX="325.0" layoutY="43.0" mnemonicParsing="false" onAction="#newFile" text="Create New Password File" />
+            <Button fx:id="loadFileButton" disable="true" layoutX="514.0" layoutY="312.0" mnemonicParsing="false" onAction="#loadFile" text="Load File" />
+         </children>
+      </Pane>
+      <Pane fx:id="filePasswordCheck" layoutX="149.0" layoutY="120.0" prefHeight="160.0" prefWidth="303.0" visible="false">
+         <children>
+            <PasswordField fx:id="filePassword" layoutX="118.0" layoutY="69.0" promptText="Enter Password" />
+            <Label layoutX="37.0" layoutY="74.0" text="Password:" />
+            <Button layoutX="21.0" layoutY="120.0" mnemonicParsing="false" onAction="#filePasswordEnterButton" text="Enter" />
+            <Button layoutX="234.0" layoutY="120.0" mnemonicParsing="false" onAction="#filePasswordCancelButton" text="Cancel" />
+            <Label fx:id="passwordCheckStatus" layoutX="52.0" layoutY="103.0" prefHeight="17.0" prefWidth="199.0" textAlignment="CENTER" />
+         </children>
+      </Pane>
+      <Pane fx:id="passwordFilePane" layoutX="54.0" layoutY="22.0" prefHeight="357.0" prefWidth="494.0" visible="false">
+         <children>
+            <ListView fx:id="passwordList" layoutX="14.0" layoutY="31.0" onMouseClicked="#passwordListClicked" prefHeight="200.0" prefWidth="465.0" />
+            <Label layoutX="15.0" text="Passwords">
+               <font>
+                  <Font name="Bangla MN" size="16.0" />
+               </font>
+            </Label>
+            <Button layoutX="13.0" layoutY="248.0" mnemonicParsing="false" onAction="#addPasswordButton" text="Add Password" />
+            <Label fx:id="passwordTitle" layoutX="161.0" layoutY="253.0" text="Password Title:" />
+            <Label fx:id="passwordMain" layoutX="161.0" layoutY="288.0" text="Password:" />
+            <Label fx:id="passwordTitleStatus" layoutX="271.0" layoutY="253.0" visible="false" />
+            <Label fx:id="passwordMainStatus" layoutX="271.0" layoutY="288.0" visible="false" />
+            <TextField fx:id="passwordTitleEdit" layoutX="260.0" layoutY="249.0" visible="false" />
+            <TextField fx:id="passwordEdit" layoutX="260.0" layoutY="284.0" visible="false" />
+            <Button fx:id="savePassword" layoutX="310.0" layoutY="319.0" mnemonicParsing="false" onAction="#savePasswordButton" text="Save" visible="false" />
+            <Button fx:id="cancelPassword" layoutX="379.0" layoutY="319.0" mnemonicParsing="false" onAction="#cancelPasswordButton" text="Cancel" visible="false" />
+            <Button layoutX="13.0" layoutY="320.0" mnemonicParsing="false" onAction="#passwordBackButton" text="Back" />
+         </children>
+      </Pane>
+      <Pane fx:id="newFilePanel" layoutX="72.0" layoutY="48.0" prefHeight="305.0" prefWidth="457.0" visible="false">
+         <children>
+            <Label layoutX="14.0" layoutY="14.0" text="Create File Password" />
+            <Label layoutX="39.0" layoutY="100.0" text="File Password:" />
+            <Label layoutX="38.0" layoutY="144.0" text="Re-Enter Password:" />
+            <Label layoutX="38.0" layoutY="261.0" />
+            <PasswordField fx:id="newFilePassword" layoutX="184.0" layoutY="96.0" promptText="Enter a Password" />
+            <PasswordField fx:id="reEnterPassword" layoutX="184.0" layoutY="140.0" promptText="Re-Enter the Password" />
+            <Button fx:id="saveNewFileButton" layoutX="29.0" layoutY="249.0" mnemonicParsing="false" onAction="#saveNewFile" text="Save" />
+            <Button layoutX="374.0" layoutY="249.0" mnemonicParsing="false" onAction="#cancelNewFile" text="Cancel" />
+            <Label fx:id="createNewPasswordStatus" layoutX="24.0" layoutY="224.0" prefHeight="17.0" prefWidth="419.0" />
+            <Label fx:id="maxAmountFiles" layoutX="115.0" layoutY="207.0" text="MAXIMUM AMOUNT OF FILES EXCEEDED" textAlignment="JUSTIFY" textFill="#d80b12" visible="false" />
+         </children>
+      </Pane>
+      <Label layoutX="4.0" text="Password Storage">
+         <font>
+            <Font name="Arial Black" size="20.0" />
+         </font>
+      </Label>
+      <Button fx:id="loadOldFilesButton" layoutX="252.0" layoutY="182.0" mnemonicParsing="false" onAction="#loadOldFiles" prefHeight="38.0" prefWidth="96.0" text="Enter" />
+   </children>
+</Pane>
